@@ -10,8 +10,8 @@ Use TA-Pagination as a part of your Tailwind CSS and Alpine JS project. You can 
 
 ## Demos and documentation
 
-[DEMO](https://ta-pagination.markusantonwolf.com)
-[REALWORLD](https://www.markusantonwolf.com/en/blog/vue-js)
+[DEMO](https://ta-pagination.markusantonwolf.com) - [REALWORLD](https://www.markusantonwolf.com/en/blog/vue-js)
+
 For more details about the TA-Pagination take a look at <https://ta-pagination.markusantonwolf.com> and if you want to see a real world example you can find it on my homepage: <https://www.markusantonwolf.com/en/blog/vue-js>
 
 ## Features
