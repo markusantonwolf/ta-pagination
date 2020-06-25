@@ -22,6 +22,9 @@
 .pagination__link:hover {
   @apply bg-pink-800 text-white;
 }
+.pagination__navigation {
+  height: var(--navigation-height);
+}
 
 @screen sm {
   .pagination__item {

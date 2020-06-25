@@ -14,6 +14,7 @@ function pagination() {
       page: 1,
       pagination: 5,
       content: 'content',
+      navigation: 'navigation',
       item: 'pagination__item',
       animation: 'pagination__anim',
       hidden: 'pagination__item--hidden',
@@ -49,13 +50,14 @@ function pagination() {
 
       // get the max height of all elements and write it to a CSS custom property
       this.$nextTick(() => {
-        this.checkElementsMaxHeight()
+        this.checkMaxHeight()
       })
 
       // event listener to re-define the height of the elements
       window.addEventListener('resize', () => {
         this.$el.style.setProperty(`--${this.default.content}-height`, '')
-        this.checkElementsMaxHeight()
+        this.$el.style.setProperty(`--${this.default.navigation}-height`, '')
+        this.checkMaxHeight()
         this.checkWindowWidth()
       })
 
@@ -90,15 +92,23 @@ function pagination() {
       }
       return visible_elements
     },
-    checkElementsMaxHeight() {
+    checkMaxHeight() {
       // get the max height of all elements in the pagination - define CSS custom property
-      var max_height = 0
+      var element_max_height = 0
       this.elements.forEach((item) => {
-        if (max_height < item.offsetHeight) {
-          max_height = item.offsetHeight
+        if (element_max_height < item.offsetHeight) {
+          element_max_height = item.offsetHeight
         }
       })
-      this.$el.style.setProperty(`--${this.default.content}-height`, `${max_height}px`)
+      this.$el.style.setProperty(`--${this.default.content}-height`, `${element_max_height}px`)
+      // get height of navigation and set CSS custom property
+      var navigation_height = 0
+      if (typeof this.$refs[this.default.navigation] === 'undefined') {
+        console.info('x-ref="' + this.default.navigation + '" is not defined')
+      } else {
+        navigation_height = this.$refs[this.default.navigation].offsetHeight
+        this.$el.style.setProperty(`--${this.default.navigation}-height`, `${navigation_height}px`)
+      }
     },
     checkLazyLoading() {
       // check if there is any image usong lazy loading
