@@ -1,0 +1,86 @@
+.pagination {
+  @apply grid gap-8 grid-cols-1 items-start overflow-hidden py-8 px-4 border-b-2 border-dashed border-gray-600 border-t-2;
+  perspective: 1000px;
+}
+
+.pagination__item {
+  height: var(--content-height);
+  @apply grid grid-cols-8 grid-rows-2 col-gap-4 text-4xl rounded-lg overflow-hidden shadow-md border border-gray-300 bg-white;
+}
+.pagination__image {
+  @apply relative col-span-8 bg-gray-200;
+}
+.pagination__lazy {
+  @apply object-contain;
+}
+.pagination__content {
+  @apply col-span-7 leading-snug text-left pl-5 py-5;
+}
+.pagination__link {
+  @apply text-pink-800 flex justify-center items-center cursor-pointer;
+}
+.pagination__link:hover {
+  @apply bg-pink-800 text-white;
+}
+
+@screen sm {
+  .pagination__item {
+    @apply grid-rows-1 col-gap-8;
+  }
+  .pagination__image {
+    @apply col-span-2 h-full;
+  }
+  .pagination__content {
+    @apply col-start-3 col-span-5 py-5 px-0;
+  }
+}
+
+/* purgecss ignore */
+.pagination__item--visible {
+  display: grid !important;
+}
+
+/* purgecss ignore */
+.pagination__item--hidden {
+  display: none !important;
+}
+
+.pagination__anim {
+  animation-timing-function: ease-in-out;
+  animation-delay: 0s;
+  animation-fill-mode: both;
+  animation-duration: 0.2s;
+  transform-origin: center center;
+  backface-visibility: hidden;
+}
+/* purgecss start ignore */
+.pagination__anim--in-right {
+  animation-name: anim-right-in;
+  opacity: 0;
+}
+
+.pagination__anim--out-right {
+  animation-name: anim-right-out;
+  opacity: 1;
+}
+
+.pagination__anim--in-left {
+  animation-name: anim-left-in;
+  opacity: 0;
+}
+
+.pagination__anim--out-left {
+  animation-name: anim-left-out;
+  opacity: 1;
+}
+
+.pagination__anim--expand {
+  animation-name: anim-expand;
+  opacity: 1;
+}
+
+.pagination__anim--shrink {
+  animation-name: anim-shrink;
+  opacity: 0;
+}
+/* purgecss end ignore */

@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TA-Pagination</title>
+    <link href="/assets/css/tailwind.css" rel="stylesheet" />
+    <link href="/assets/css/pagination.css" rel="stylesheet" />
+    <link href="/assets/css/pagination-keyframes-move.css" rel="stylesheet" />
+    <script src="/assets/js/alpine.min.js" defer></script>
+  </head>
+  <body class="bg-white font-sans tracking-wide leading-loose text-base text-gray-900 font-light hyphens antialiased">
+    <div class="flex flex-col min-h-screen">
+      <div class="flex-grow">
+        <div class="container mx-auto text-center my-6">
+          <div class="md:w-2/3 leading-normal px-5 mx-auto">
+            <h1 class="text-5xl font-light">
+              TA-Pagination
+            </h1>
+            <p class="text-xl font-light">
+              A light-weight, responsive and mobile first pagination for content, based on Alpine JS and Tailwind CSS.
+              100% customizable and endless animation options. If you already use Alpine JS and Tailwind CSS in your
+              project you might consider using this pagination for articles, lists, products, news - all content that is
+              formated as item list.
+            </p>
+          </div>
+          <div class="px-5 my-12">
+            <h2 class="text-4xl leading-tight font-light mb-5">
+              Pagination for articles, lists, products
+            </h2>
+            <h3 class="text-2xl leading-snug font-light">In this example I used CSS grid to format all article examples. You can use different animations styles - check it out.</h3>
+            <div class="mt-6 hidden" x-data="pagination()" x-init="init({page: 1, pagination: 3})" :class="{'grid': initialized, 'hidden': !initialized}">
+              <div class="pagination" x-ref="content">
+                <div class="pagination__item pagination__anim">
+                  <div class="pagination__image">
+                    <img
+                      src="https://picsum.photos/320/200?random=1"
+                      alt=""
+                      class="block col-span-2 absolute inset-0 h-full w-full object-cover object-center"
+                      title="Image Title"
+                    />
+                  </div>
+                  <div class="pagination__content">
+                    <h2 class="text-3xl font-medium text-pink-800 mb-2">Unus lorem ipsum dolor</h2>
+                    <p class="text-lg font-normal">
+                      Sit amet consectetur adipisicing elit. Recusandae fugit assumenda repellat alias eligendi quos,
+                      maxime sapiente voluptate ratione quo nisi ad autem quis nam repellendus dolores. Tempora,
+                      provident error!
+                    </p>
+                  </div>
+                  <div class="pagination__link">
+                    <svg class="fill-current w-12 h-12 md:w-16 md:h-16" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512">
+                      <path
+                        d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
+                      />
+                    </svg>
+                  </div>
+                </div>
+                <div class="pagination__item pagination__anim">
+                  <div class="pagination__image">
+                    <img
+                      src="https://picsum.photos/320/200?random=2"
+                      alt=""
+                      class="block col-span-2 absolute inset-0 h-full w-full object-cover object-center"
+                      title="Image Title"
+                    />
+                  </div>
+                  <div class="pagination__content">
+                    <h2 class="text-3xl font-medium text-pink-800 mb-2">Duo lorem ipsum dolor</h2>
+                    <p class="text-lg font-normal">
+                      Sit amet consectetur adipisicing elit. Recusandae fugit assumenda repellat alias eligendi quos,
+                      maxime sapiente voluptate ratione quo nisi ad autem quis nam repellendus dolores. Tempora,
+                      provident error!
+                    </p>
+                  </div>
+                  <div class="pagination__link">
+                    <svg class="fill-current w-16 h-16" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512">
+                      <path
+                        d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
+                      />
+                    </svg>
+                  </div>
+                </div>
+                <div class="pagination__item pagination__anim">
+                  <div class="pagination__image">
+                    <img
+                      src="https://picsum.photos/320/200?random=3"
+                      alt=""
+                      class="block col-span-2 absolute inset-0 h-full w-full object-cover object-center"
+                      title="Image Title"
+                    />
+                  </div>
+                  <div class="pagination__content">
+                    <h2 class="text-3xl font-medium text-pink-800 mb-2">Tribus lorem ipsum dolor</h2>
+                    <p class="text-lg font-normal">
+                      Sit amet consectetur adipisicing elit. Recusandae fugit assumenda repellat alias eligendi quos,
+                      maxime sapiente voluptate ratione quo nisi ad autem quis nam repellendus dolores. Tempora,
+                      provident error!
+                    </p>
+                  </div>
+                  <div class="pagination__link">
+                    <svg class="fill-current w-16 h-16" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512">
+                      <path
+                        d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
+                      />
+                    </svg>
+                  </div>
+                </div>
+                <div class="pagination__item pagination__item--hidden pagination__anim">
+                  <div class="relative col-span-2 bg-gray-200 h-full">
+                    <img
+                      src="https://picsum.photos/320/200?random=4"
+                      alt=""
+                      class="block col-span-2 absolute inset-0 h-full w-full object-cover object-center"
+                      title="Image Title"
+                    />
+                  </div>
+                  <div class="pagination__content">
+                    <h2 class="text-3xl font-medium text-pink-800 mb-2">Quattuor lorem ipsum dolor</h2>
+                    <p class="text-lg font-normal">
+                      Sit amet consectetur adipisicing elit. Recusandae fugit assumenda repellat alias eligendi quos,
+                      maxime sapiente voluptate ratione quo nisi ad autem quis nam repellendus dolores. Tempora,
+                      provident error!
+                    </p>
+                  </div>
+                  <div class="pagination__link">
+                    <svg class="fill-current w-16 h-16" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512">
+                      <path
+                        d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
+                      />
+                    </svg>
+                  </div>
+                </div>
+                <div class="pagination__item pagination__item--hidden pagination__anim">
+                  <div class="relative col-span-2 bg-gray-200 h-full">
+                    <img
+                      src="https://picsum.photos/320/200?random=5"
+                      alt=""
+                      class="block col-span-2 absolute inset-0 h-full w-full object-cover object-center"
+                      title="Image Title"
+                    />
+                  </div>
+                  <div class="pagination__content">
+                    <h2 class="text-3xl font-medium text-pink-800 mb-2">Quinque lorem ipsum dolor</h2>
+                    <p class="text-lg font-normal">
+                      Sit amet consectetur adipisicing elit. Recusandae fugit assumenda repellat alias eligendi quos,
+                      maxime sapiente voluptate ratione quo nisi ad autem quis nam repellendus dolores. Tempora,
+                      provident error!
+                    </p>
+                  </div>
+                  <div class="pagination__link">
+                    <svg class="fill-current w-16 h-16" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512">
+                      <path
+                        d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
+                      />
+                    </svg>
+                  </div>
+                </div>
+                <div class="pagination__item pagination__item--hidden pagination__anim">
+                  <div class="relative col-span-2 bg-gray-200 h-full">
+                    <img
+                      src="https://picsum.photos/320/200?random=6"
+                      alt=""
+                      class="block col-span-2 absolute inset-0 h-full w-full object-cover object-center"
+                      title="Image Title"
+                    />
+                  </div>
+                  <div class="pagination__content">
+                    <h2 class="text-3xl font-medium text-pink-800 mb-2">Sex lorem ipsum dolor</h2>
+                    <p class="text-lg font-normal">
+                      Sit amet consectetur adipisicing elit. Recusandae fugit assumenda repellat alias eligendi quos,
+                      maxime sapiente voluptate ratione quo nisi ad autem quis nam repellendus dolores. Tempora,
+                      provident error!
+                    </p>
+                  </div>
+                  <div class="pagination__link">
+                    <svg class="fill-current w-16 h-16" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512">
+                      <path
+                        d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
+                      />
+                    </svg>
+                  </div>
+                </div>
+                <div class="pagination__item pagination__item--hidden pagination__anim">
+                  <div class="pagination__image">
+                    <img
+                      src="https://picsum.photos/320/200?random=7"
+                      alt=""
+                      class="block col-span-2 absolute inset-0 h-full w-full object-cover object-center"
+                      title="Image Title"
+                    />
+                  </div>
+                  <div class="pagination__content">
+                    <h2 class="text-3xl font-medium text-pink-800 mb-2">Septem lorem ipsum dolor</h2>
+                    <p class="text-lg font-normal">
+                      Sit amet consectetur adipisicing elit. Recusandae fugit assumenda repellat alias eligendi quos,
+                      maxime sapiente voluptate ratione quo nisi ad autem quis nam repellendus dolores. Tempora,
+                      provident error!
+                    </p>
+                  </div>
+                  <div class="pagination__link">
+                    <svg class="fill-current w-16 h-16" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512">
+                      <path
+                        d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
+                      />
+                    </svg>
+                  </div>
+                </div>
+                <div class="pagination__item pagination__item--hidden pagination__anim">
+                  <div class="pagination__image">
+                    <img
+                      src="https://picsum.photos/320/200?random=8"
+                      alt=""
+                      class="block col-span-2 absolute inset-0 h-full w-full object-cover object-center"
+                      title="Image Title"
+                    />
+                  </div>
+                  <div class="pagination__content">
+                    <h2 class="text-3xl font-medium text-pink-800 mb-2">Octo lorem ipsum dolor</h2>
+                    <p class="text-lg font-normal">
+                      Sit amet consectetur adipisicing elit. Recusandae fugit assumenda repellat alias eligendi quos,
+                      maxime sapiente voluptate ratione quo nisi ad autem quis nam repellendus dolores. Tempora,
+                      provident error!
+                    </p>
+                  </div>
+                  <div class="pagination__link">
+                    <svg class="fill-current w-16 h-16" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512">
+                      <path
+                        d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
+                      />
+                    </svg>
+                  </div>
+                </div>
+                <div class="pagination__item pagination__item--hidden pagination__anim">
+                  <div class="pagination__image">
+                    <img
+                      src="https://picsum.photos/320/200?random=9"
+                      alt=""
+                      class="block col-span-2 absolute inset-0 h-full w-full object-cover object-center"
+                      title="Image Title"
+                    />
+                  </div>
+                  <div class="pagination__content">
+                    <h2 class="text-3xl font-medium text-pink-800 mb-2">Novem lorem ipsum dolor</h2>
+                    <p class="text-lg font-normal">
+                      Sit amet consectetur adipisicing elit. Recusandae fugit assumenda repellat alias eligendi quos,
+                      maxime sapiente voluptate ratione quo nisi ad autem quis nam repellendus dolores. Tempora,
+                      provident error!
+                    </p>
+                  </div>
+                  <div class="pagination__link">
+                    <svg class="fill-current w-16 h-16" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512">
+                      <path
+                        d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
+                      />
+                    </svg>
+                  </div>
+                </div>
+                <div class="pagination__item pagination__item--hidden pagination__anim">
+                  <div class="pagination__image">
+                    <img
+                      src="https://picsum.photos/320/200?random=10"
+                      alt=""
+                      class="block col-span-2 absolute inset-0 h-full w-full object-cover object-center"
+                      title="Image Title"
+                    />
+                  </div>
+                  <div class="pagination__content">
+                    <h2 class="text-3xl font-medium text-pink-800 mb-2">Decem orem ipsum dolor</h2>
+                    <p class="text-lg font-normal">
+                      Sit amet consectetur adipisicing elit. Recusandae fugit assumenda repellat alias eligendi quos,
+                      maxime sapiente voluptate ratione quo nisi ad autem quis nam repellendus dolores. Tempora,
+                      provident error!
+                    </p>
+                  </div>
+                  <div class="pagination__link">
+                    <svg class="fill-current w-16 h-16" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512">
+                      <path
+                        d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
+                      />
+                    </svg>
+                  </div>
+                </div>
+                <div class="pagination__item pagination__item--hidden pagination__anim">
+                  <div class="pagination__image">
+                    <img
+                      src="https://picsum.photos/320/200?random=11"
+                      alt=""
+                      class="block col-span-2 absolute inset-0 h-full w-full object-cover object-center"
+                      title="Image Title"
+                    />
+                  </div>
+                  <div class="pagination__content">
+                    <h2 class="text-3xl font-medium text-pink-800 mb-2">Undecim lorem ipsum dolor</h2>
+                    <p class="text-lg font-normal">
+                      Sit amet consectetur adipisicing elit. Recusandae fugit assumenda repellat alias eligendi quos,
+                      maxime sapiente voluptate ratione quo nisi ad autem quis nam repellendus dolores. Tempora,
+                      provident error!
+                    </p>
+                  </div>
+                  <div class="pagination__link">
+                    <svg class="fill-current w-16 h-16" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512">
+                      <path
+                        d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
+                      />
+                    </svg>
+                  </div>
+                </div>
+              </div>
+              <div class="grid grid-cols-6 justify-center items-center pt-6 h-16">
+                <div>
+                  <a href="expand-all" class="btn" x-on:click.prevent="start()" x-show="has_previous">
+                    <svg class="fill-current w-6 h-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                      <path
+                        d="M223.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L319.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L393.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34zm-192 34l136 136c9.4 9.4 24.6 9.4 33.9 0l22.6-22.6c9.4-9.4 9.4-24.6 0-33.9L127.9 256l96.4-96.4c9.4-9.4 9.4-24.6 0-33.9L201.7 103c-9.4-9.4-24.6-9.4-33.9 0l-136 136c-9.5 9.4-9.5 24.6-.1 34z"
+                      />
+                    </svg>
+                  </a>
+                </div>
+                <div>
+                  <a href="previous-page" class="btn" x-on:click.prevent="previous()" x-show="has_previous">
+                    <svg class="fill-current w-6 h-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512">
+                      <path
+                        d="M31.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L127.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L201.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34z"
+                      />
+                    </svg>
+                  </a>
+                </div>
+                <div class="col-span-2">
+                  <a href="expand-all" class="btn" x-on:click.prevent="expand()" x-show="is_shrink">
+                    <svg class="fill-current w-6 h-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">
+                      <path
+                        d="M143 256.3L7 120.3c-9.4-9.4-9.4-24.6 0-33.9l22.6-22.6c9.4-9.4 24.6-9.4 33.9 0l96.4 96.4 96.4-96.4c9.4-9.4 24.6-9.4 33.9 0L313 86.3c9.4 9.4 9.4 24.6 0 33.9l-136 136c-9.4 9.5-24.6 9.5-34 .1zm34 192l136-136c9.4-9.4 9.4-24.6 0-33.9l-22.6-22.6c-9.4-9.4-24.6-9.4-33.9 0L160 352.1l-96.4-96.4c-9.4-9.4-24.6-9.4-33.9 0L7 278.3c-9.4 9.4-9.4 24.6 0 33.9l136 136c9.4 9.5 24.6 9.5 34 .1z"
+                      />
+                    </svg>
+                  </a>
+                  <a href="expand-all" class="btn" x-on:click.prevent="shrink()" x-show="is_expand">
+                    <svg class="fill-current w-6 h-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">
+                      <path
+                        d="M177 255.7l136 136c9.4 9.4 9.4 24.6 0 33.9l-22.6 22.6c-9.4 9.4-24.6 9.4-33.9 0L160 351.9l-96.4 96.4c-9.4 9.4-24.6 9.4-33.9 0L7 425.7c-9.4-9.4-9.4-24.6 0-33.9l136-136c9.4-9.5 24.6-9.5 34-.1zm-34-192L7 199.7c-9.4 9.4-9.4 24.6 0 33.9l22.6 22.6c9.4 9.4 24.6 9.4 33.9 0l96.4-96.4 96.4 96.4c9.4 9.4 24.6 9.4 33.9 0l22.6-22.6c9.4-9.4 9.4-24.6 0-33.9l-136-136c-9.2-9.4-24.4-9.4-33.8 0z"
+                      />
+                    </svg>
+                  </a>
+                </div>
+                <div>
+                  <a href="next-page" class="btn" x-on:click.prevent="next()" x-show="has_next">
+                    <svg class="fill-current w-6 h-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512">
+                      <path
+                        d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
+                      />
+                    </svg>
+                  </a>
+                </div>
+                <div>
+                  <a href="expand-all" class="btn" x-on:click.prevent="end()" x-show="has_next">
+                    <svg class="fill-current w-6 h-6" viewBox="0 0 448 512" xmlns="http://www.w3.org/2000/svg">
+                      <path
+                        d="m224.3 273-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9l22.5-22.8c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34zm192-34-136-136c-9.4-9.4-24.6-9.4-33.9 0l-22.6 22.6c-9.4 9.4-9.4 24.6 0 33.9l96.4 96.4-96.4 96.4c-9.4 9.4-9.4 24.6 0 33.9l22.6 22.6c9.4 9.4 24.6 9.4 33.9 0l136-136c9.4-9.2 9.4-24.4 0-33.8z"
+                      />
+                    </svg>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="bg-blue-900 text-white font-medium">
+        <div class="container mx-auto py-6 text-center">
+          <p class="text-xs mx-2">
+            Licensed under the MIT license, see
+            <a href="https://github.com/markusantonwolf/ta-gallery/blob/master/licence.md" target="_blank"
+              >LICENSE.md</a
+            >
+            for details.
+          </p>
+        </div>
+      </div>
+    </div>
+    <script src="/assets/js/pagination.js"></script>
+  </body>
+</html>
