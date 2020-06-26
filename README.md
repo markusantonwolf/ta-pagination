@@ -20,8 +20,10 @@ For more details about the TA-Pagination take a look at <https://ta-pagination.m
 - Balanced content item height base of CSS custom properties
 - Customizable pagination - start element and amount of elements
 - Customizable animations - CSS animations
+- Breakpoints for a perfect responsive experience
 - Customizable class names
-- Small file sizes JS + CSS + Animation = 9,6 kByte
+- Small file sizes JS = 6,4 kByte
+- CSS + Animation = 3,3 kByte
 - Alpine JS and Tailwind CSS + BEM
 
 ## Local development
