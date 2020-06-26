@@ -20,8 +20,10 @@ function pagination() {
       hidden: 'pagination__item--hidden',
       visible: 'pagination__item--visible',
       lazy: 'pagination__lazy',
-      breakpoint: '640',
-      breakpoint_pagination: '2',
+      breakpoints: [
+        { width: '768', pagination: '2' },
+        { width: '640', pagination: '1' },
+      ],
     },
     init(options) {
       // checks if there are some new options
@@ -39,14 +41,17 @@ function pagination() {
       this.visible = this.getVisibleElements()
 
       // initialize all elements and set the not visible ones to hidden
-      var counter = 0
-      this.$refs[this.default.content].querySelectorAll('.' + this.default.item).forEach((item) => {
-        if (!this.visible.includes(counter)) {
-          item.classList.add(this.default.hidden)
+      var elements = this.$refs[this.default.content].querySelectorAll('.' + this.default.item)
+      if (elements.length === 0) {
+        // if there is no default class found - use the children
+        elements = this.$refs[this.default.content].children
+      }
+      for (let index = 0; index < elements.length; index++) {
+        if (!this.visible.includes(index)) {
+          elements[index].classList.add(this.default.hidden)
         }
-        this.elements.push(item)
-        counter++
-      })
+        this.elements.push(elements[index])
+      }
 
       // get the max height of all elements and write it to a CSS custom property
       this.$nextTick(() => {
@@ -103,9 +108,7 @@ function pagination() {
       this.$el.style.setProperty(`--${this.default.content}-height`, `${element_max_height}px`)
       // get height of navigation and set CSS custom property
       var navigation_height = 0
-      if (typeof this.$refs[this.default.navigation] === 'undefined') {
-        console.info('x-ref="' + this.default.navigation + '" is not defined')
-      } else {
+      if (typeof this.$refs[this.default.navigation] !== 'undefined') {
         navigation_height = this.$refs[this.default.navigation].offsetHeight
         this.$el.style.setProperty(`--${this.default.navigation}-height`, `${navigation_height}px`)
       }
@@ -114,26 +117,39 @@ function pagination() {
       // check if there is any image usong lazy loading
       this.elements.forEach((item) => {
         var images = item.getElementsByTagName('img')
-        for (let index = 0; index < images.length; index++) {
-          if (typeof images[index].dataset.src === 'undefined') {
+        for (let i = 0; i < images.length; i++) {
+          if (typeof images[i].dataset.src === 'undefined') {
             continue
           }
           // define virtual image and load src - remove class and switch src
           var image_virtual = new Image()
           image_virtual.onload = (event) => {
-            images[index].src = images[index].dataset.src
-            images[index].classList.remove(this.default.lazy)
+            images[i].src = images[i].dataset.src
+            images[i].classList.remove(this.default.lazy)
           }
-          image_virtual.src = images[index].dataset.src
+          image_virtual.src = images[i].dataset.src
         }
       })
     },
     checkWindowWidth() {
-      // use the breakpoint to reduce the amount of elements shown on the screen
-      if (window.innerWidth <= parseInt(this.default.breakpoint)) {
-        this.pagination = parseInt(this.default.breakpoint_pagination)
-      } else {
-        this.pagination = this.default.pagination
+      // use breakpoints to reduce the amount of elements shown on the screen
+      if (this.default.breakpoints === false) return false
+      var breakpoints = this.default.breakpoints
+
+      // order breakpoints ASC
+      var compare = function (a, b) {
+        if (parseInt(a.width) > parseInt(b.width)) return 1
+        if (parseInt(b.width) > parseInt(a.width)) return -1
+        return 0
+      }
+      breakpoints.sort(compare)
+
+      this.pagination = this.default.pagination
+      for (let i = 0; i < breakpoints.length; i++) {
+        if (window.innerWidth < parseInt(breakpoints[i].width)) {
+          this.pagination = parseInt(breakpoints[i].pagination)
+          break // mobile first
+        }
       }
       this.visible = this.getVisibleElements()
       this.elements.forEach((item, index) => {
