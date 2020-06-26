@@ -2,7 +2,7 @@
 @keyframes anim-right-in {
   from {
     opacity: 0;
-    transform: translateX(-2rem);
+    transform: translateX(2rem);
   }
   to {
     opacity: 1;
@@ -16,13 +16,13 @@
   }
   to {
     opacity: 0;
-    transform: translateX(2rem);
+    transform: translateX(-2rem);
   }
 }
 @keyframes anim-left-in {
   from {
     opacity: 0;
-    transform: translateX(2rem);
+    transform: translateX(-2rem);
   }
   to {
     opacity: 1;
@@ -36,7 +36,7 @@
   }
   to {
     opacity: 0;
-    transform: translateX(-2rem);
+    transform: translateX(2rem);
   }
 }
 @keyframes anim-expand {
