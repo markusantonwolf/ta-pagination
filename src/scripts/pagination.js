@@ -64,6 +64,7 @@ function pagination() {
         this.$el.style.setProperty(`--${this.default.navigation}-height`, '')
         this.checkMaxHeight()
         this.checkWindowWidth()
+        this.defineVisibleElements()
       })
 
       // watch animation prop if there is an animation running - hide buttons during animation
@@ -83,6 +84,7 @@ function pagination() {
       this.checkExpand()
       this.checkNavigation()
       this.checkWindowWidth()
+      this.defineVisibleElements()
       this.checkLazyLoading()
 
       // set pagination script to initialized
@@ -151,6 +153,9 @@ function pagination() {
           break // mobile first
         }
       }
+    },
+    defineVisibleElements() {
+      // define the default visible elements based on the settings
       this.visible = this.getVisibleElements()
       this.elements.forEach((item, index) => {
         if (!this.visible.includes(index)) {
@@ -189,6 +194,8 @@ function pagination() {
       })
     },
     startShrink() {
+      this.checkWindowWidth()
+
       // define all visible elements for the actual setup
       this.visible = this.getVisibleElements()
 
