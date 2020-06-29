@@ -22,7 +22,7 @@ For more details about the TA-Pagination take a look at <https://ta-pagination.m
 - Customizable animations - CSS animations
 - Breakpoints for a perfect responsive experience
 - Customizable class names
-- Small file sizes JS = 6,4 kByte
+- Small file sizes JS = 6,5 kByte
 - CSS + Animation = 3,3 kByte
 - Alpine JS and Tailwind CSS + BEM
 
