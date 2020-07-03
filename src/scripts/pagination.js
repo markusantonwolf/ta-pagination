@@ -303,6 +303,9 @@ function pagination() {
       if (this.pagination === this.elements.length) {
         this.is_expand = true
         this.is_shrink = false
+      } else if (this.pagination >= this.elements.length) {
+        this.is_expand = false
+        this.is_shrink = false
       } else {
         this.is_expand = false
         this.is_shrink = true
