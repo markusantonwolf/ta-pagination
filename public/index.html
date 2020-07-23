@@ -13,23 +13,36 @@
     <div class="flex flex-col min-h-screen">
       <div class="flex-grow">
         <div class="container mx-auto text-center my-6">
-          <div class="md:w-2/3 leading-normal px-5 mx-auto">
-            <h1 class="text-5xl font-light">
-              TA-Pagination
+          <div class="md:w-2/3 leading-normal text-xl font-light mx-auto px-5 sm:px-2">
+            <h1 class="mx-auto w-1/2 my-8">
+              <img src="/assets/img/logo-ta-pagination.png" alt="Logo TA-Pagination" class="w-full" />
             </h1>
-            <p class="text-xl font-light">
+            <p class="my-4">
               A light-weight, responsive and mobile first pagination for content, based on Alpine JS and Tailwind CSS.
               100% customizable and endless animation options. If you already use Alpine JS and Tailwind CSS in your
               project you might consider using this pagination for articles, lists, products, news - all content that is
               formated as item list.
+            </p>
+            <p class="my-4">
+              <a class="inline-block text-pink-800 font-semibold hover:text-black hover:underline mx-2" href="https://ta-pagination.markusantonwolf.com" target="_blank">DEMO</a>
+              <a class="inline-block text-pink-800 font-semibold hover:text-black hover:underline mx-2" href="https://ta-pagination.markusantonwolf.com" target="_blank">DOCU</a>
+              <a class="inline-block text-pink-800 font-semibold hover:text-black hover:underline mx-2" href="https://www.markusantonwolf.com/en/blog/vue-js" target="_blank">REAL LIVE</a>
             </p>
           </div>
           <div class="px-5 my-12">
             <h2 class="text-4xl leading-tight font-light mb-5">
               Pagination for articles, lists, products
             </h2>
-            <h3 class="text-2xl leading-snug font-light">In this example I used CSS grid to format all article examples. You can use different animations styles - check it out.</h3>
-            <div class="mt-6 hidden" x-data="pagination()" x-init="init({page: 1, pagination: 3})" :class="{'grid': initialized, 'hidden': !initialized}">
+            <h3 class="text-2xl leading-snug font-light">
+              In this example I used CSS grid to format all article examples. You can use different animations styles -
+              check it out.
+            </h3>
+            <div
+              class="mt-6 hidden"
+              x-data="pagination()"
+              x-init="init({page: 1, pagination: 3})"
+              :class="{'grid': initialized, 'hidden': !initialized}"
+            >
               <div class="pagination" x-ref="content">
                 <div class="pagination__item pagination__anim">
                   <div class="pagination__image">
@@ -49,7 +62,11 @@
                     </p>
                   </div>
                   <div class="pagination__link">
-                    <svg class="fill-current w-12 h-12 md:w-16 md:h-16" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512">
+                    <svg
+                      class="fill-current w-12 h-12 md:w-16 md:h-16"
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 256 512"
+                    >
                       <path
                         d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
                       />
@@ -362,6 +379,26 @@
                 </div>
               </div>
             </div>
+          </div>
+        </div>
+        <div class="w-full bg-gray-200">
+          <div class="max-w-2xl w-full lg:w-1/2 leading-normal text-xl font-light mx-auto py-12 px-2">
+            <div class="mx-auto w-1/2 my-8">
+              <img src="/assets/img/logo-ta-styled-plugins.png" alt="Logo TA StyledPLUGINS" class="w-full" />
+            </div>
+            <p class="pb-4">
+              TA StylesPLUGINS stands for light-weight, responsive and mobile first. All plugins are based on Tailwind
+              CSS and Alpine JS. All are 100% customizable with endless animation options.
+            </p>
+            <p class="pb-4">
+              <a
+                href="https://github.com/markusantonwolf/ta-gallery"
+                target="_blank"
+                class="text-pink-800 hover:text-black hover:underline font-semibold"
+                >TA-Gallery</a
+              >
+              - An image gallery with endless animation options.
+            </p>
           </div>
         </div>
       </div>

@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="./public/assets/img/ta-pagination.png" width="900px" />
+  <img src="./public/assets/img/logo-ta-pagination.png" width="400px" />
 </p>
 
 # TA-Pagination
@@ -10,7 +10,7 @@ Use TA-Pagination as a part of your Tailwind CSS and Alpine JS project. You can 
 
 ## Demos and documentation
 
-[DEMO](https://ta-pagination.markusantonwolf.com) - [REALWORLD](https://www.markusantonwolf.com/en/blog/vue-js)
+[DEMO](https://ta-pagination.markusantonwolf.com) | [DOCU](https://ta-pagination.markusantonwolf.com) | [REALWORLD](https://www.markusantonwolf.com/en/blog/vue-js)
 
 For more details about the TA-Pagination take a look at <https://ta-pagination.markusantonwolf.com> and if you want to see a real world example you can find it on my homepage: <https://www.markusantonwolf.com/en/blog/vue-js>
 
@@ -25,6 +25,10 @@ For more details about the TA-Pagination take a look at <https://ta-pagination.m
 - Small file sizes JS = 6,5 kByte
 - CSS + Animation = 3,3 kByte
 - Alpine JS and Tailwind CSS + BEM
+
+## More TA StyledPlugins
+
+- [TA Gallery](https://github.com/markusantonwolf/ta-gallery) - An image gallery with endless animation options.
 
 ## Local development
 
@@ -46,11 +50,13 @@ npm run develop
 npm run build
 ```
 
-## Download
+## Licence
 
-TA Pagination is released under the MIT license & supports modern environments.
+TA Pagination is released under the [MIT license](https://github.com/markusantonwolf/ta-pagination/blob/master/licence.md) & supports modern environments.
 
 ## Copyright
 
 © 2020 Markus A. Wolf
 <https://www.markusantonwolf.com>
+
+<img src="./public/assets/img/logo-ta-styled-plugins.png" width="200px" style="padding-top:2rem;" />
