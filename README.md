@@ -26,9 +26,21 @@ For more details about the TA-Pagination take a look at <https://ta-pagination.m
 - CSS + Animation = 3,3 kByte
 - Alpine JS and Tailwind CSS + BEM
 
-## More TA StyledPlugins
+## CDN
 
-- [TA Gallery](https://github.com/markusantonwolf/ta-gallery) - An image gallery with endless animation options.
+### TA-Foodtrucks
+
+```html
+<script src="https://cdn.jsdelivr.net/gh/markusantonwolf/ta-pagination@latest/dist/js/pagination.js"></script>
+```
+
+## All TA StyledPlugins
+
+-   [TA-Gallery](https://github.com/markusantonwolf/ta-gallery) - An image gallery with endless animation options.
+-   [TA-Pagination](https://github.com/markusantonwolf/ta-pagination) - A content pagination solution.
+-   [TA-Youtube](https://github.com/markusantonwolf/ta-youtube) - A YouTube video wrapper with auto playback and aspect ratio for the video player.
+-   [TA-Analytics](https://github.com/markusantonwolf/ta-analytics) - A plugin for every website that needs to have an easy and customizable Google Analytics “blocker”.
+-   [TA-Foodtrucks](https://github.com/markusantonwolf/ta-foodtrucks) - A plugin to show the next food truck and street food dates in your area.
 
 ## Local development
 
