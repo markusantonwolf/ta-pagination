@@ -28,7 +28,7 @@ For more details about the TA-Pagination take a look at <https://ta-pagination.m
 
 ## CDN
 
-### TA-Foodtrucks
+### TA-Pagination
 
 ```html
 <script src="https://cdn.jsdelivr.net/gh/markusantonwolf/ta-pagination@latest/dist/js/pagination.js"></script>
