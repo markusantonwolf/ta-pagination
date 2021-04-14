@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="./public/assets/img/logo-ta-pagination.png" width="400px" />
+  <img src="./public/img/logo-ta-pagination.png" width="400px" />
 </p>
 
 # **TA-Pagination** - content, article and product pagination
@@ -116,4 +116,4 @@ TA Pagination is released under the [MIT license](https://github.com/markusanton
 © 2021 Markus A. Wolf
 <https://www.markusantonwolf.com>
 
-<img src="./public/assets/img/logo-ta-styled-plugins.png" width="200px" style="padding-top:2rem;" />
+<img src="./public/img/logo-ta-styled-plugins.png" width="200px" style="padding-top:2rem;" />
