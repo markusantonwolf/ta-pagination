@@ -2,49 +2,94 @@
   <img src="./public/assets/img/logo-ta-pagination.png" width="400px" />
 </p>
 
-# TA-Pagination
+# **TA-Pagination** - content, article and product pagination
 
-An content pagination solution which is 100% customizable and has endless animation options. If you already use Tailwind CSS and Alpine JS in your project you might consider using TA-Pagination. If you are aware of speed loading then you can use the lazy loading feature so you can keep you web page speed high.
+A light-weight, responsive and mobile first content, image, article and product pagination for every kind of application.
 
-Use TA-Pagination as a part of your Tailwind CSS and Alpine JS project. You can use it as a stand alone version but it works best together with your own scripts and enhancements. The content and article pagination is designed to fit in every project, in every grid and in every flexbox design.
+## Demos, Documentation and Examples
 
-## Demos and documentation
+[Documentation](https://ta-styled-plugins.com/ta-pagination/)
 
-[DEMO](https://ta-pagination.markusantonwolf.com) | [DOCU](https://ta-pagination.markusantonwolf.com) | [REALWORLD](https://www.markusantonwolf.com/en/blog/vue-js)
+[Getting started](https://ta-styled-plugins.com/ta-pagination/getting-started/)
 
-For more details about the TA-Pagination take a look at <https://ta-pagination.markusantonwolf.com> and if you want to see a real world example you can find it on my homepage: <https://www.markusantonwolf.com/en/blog/vue-js>
+[Examples](https://ta-styled-plugins.com/ta-pagination/examples/)
+
+[Configuration](https://ta-styled-plugins.com/ta-pagination/configuration/)
 
 ## Features
 
-- Lazy loading
-- Balanced content item height base of CSS custom properties
-- Customizable pagination - start element and amount of elements
-- Customizable animations - CSS animations
-- Breakpoints for a perfect responsive experience
-- Customizable class names
-- Small file sizes JS = 6,5 kByte
-- CSS + Animation = 3,3 kByte
-- Alpine JS and Tailwind CSS + BEM
+-   Paginate every content - Choose every kind of content, image, text, table or list.
+-   Transitions - You can change the transition for every slide.
+-   Autoplay mode - Control the pagination the way you want to
+-   Responsive - Define the pagination based on breakpoints
+-   Unify heights - Smooth transitions and stable heights of all items
+-   Based on Alpine JS - Small footprint and Vue JS inspired, like Tailwind for JavaScript
+-   100% Tailwind CSS - Rapidly build modern websites without leaving your HTML
 
-## CDN
+## Install
 
-### TA-Pagination
+**From npm:** Install the package.
 
-```html
-<script src="https://cdn.jsdelivr.net/gh/markusantonwolf/ta-pagination@latest/dist/js/pagination.js"></script>
+```bash
+
+# Install using npm
+
+npm install --save-dev @markusantonwolf/ta-pagination
+
+# Install using yarn
+
+yarn add -D @markusantonwolf/ta-pagination
+```
+
+**Inside tailwind.config.js:** Add the plugin to your tailwind css config file.
+
+```js
+// tailwind.config.js
+
+const ta_pagination_safelist = require('./node_modules/@markusantonwolf/ta-pagination/src/plugin/safelist')
+
+module.exports = {
+    purge: {
+        // ...
+        options: {
+            safelist: [...ta_pagination_safelist],
+        },
+        // ...
+    },
+    // ...
+    theme: {
+        // ...
+        taPagination: {
+            animations: ['swing', 'spin', 'swipe', 'fade', 'slide', 'rotate', 'snake', 'window', 'scroll', 'fold'],
+            animation_default: 'swing', // default value
+        },
+        // ...
+    },
+    // ...
+    variants: {
+        // ...
+        taPagination: ['responsive'], // default value
+        extend: {
+            // ...
+        },
+    },
+    // ...
+    plugins: [
+        require('@markusantonwolf/ta-pagination')({
+            respectPrefix: true, // respect prefix option in config: true (default) | false
+            respectImportant: true, // respect important option in config: true (default) | false
+        }),
+    ],
+}
 ```
 
 ## All TA StyledPlugins
 
--   [TA-Gallery](https://github.com/markusantonwolf/ta-gallery) - An image gallery with endless animation options.
--   [TA-Pagination](https://github.com/markusantonwolf/ta-pagination) - A content pagination solution.
--   [TA-Youtube](https://github.com/markusantonwolf/ta-youtube) - A YouTube video wrapper with auto playback and aspect ratio for the video player.
--   [TA-Analytics](https://github.com/markusantonwolf/ta-analytics) - A plugin for every website that needs to have an easy and customizable Google Analytics “blocker”.
--   [TA-Foodtrucks](https://github.com/markusantonwolf/ta-foodtrucks) - A plugin to show the next food truck and street food dates in your area.
+-   [TA-Styled-Plugins](https://ta-styled-plugins.com/) - Explore all Tailwind CSS and Alpine JS styled plugins and learn how to enhance your website fast and easy.
 
 ## Local development
 
-```
+```bash
 // To install dev dependencies run:
 
 npm install
@@ -68,7 +113,7 @@ TA Pagination is released under the [MIT license](https://github.com/markusanton
 
 ## Copyright
 
-© 2020 Markus A. Wolf
+© 2021 Markus A. Wolf
 <https://www.markusantonwolf.com>
 
 <img src="./public/assets/img/logo-ta-styled-plugins.png" width="200px" style="padding-top:2rem;" />
