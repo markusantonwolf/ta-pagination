@@ -1,6 +1,6 @@
 {
     "name": "@markusantonwolf/ta-pagination",
-    "version": "1.0.3",
+    "version": "2.0.0",
     "description": "A light-weight, responsive and mobile first content, image, article and product pagination for every kind of application.",
     "main": "src/plugin/index.js",
     "scripts": {
